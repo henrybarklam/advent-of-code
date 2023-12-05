@@ -1,4 +1,3 @@
-# Put the numbers into a grid first, then go line by line and check all 8 possibilities around a number block
 text = open('engine.txt','r')
 readLines = text.readlines()
 
@@ -10,7 +9,6 @@ class EngineDecoder:
         total_count = 0
         for row in range(len(grid)):
             for cell in range(len(grid[row])):
-                #Double check this
                 if grid[row][cell].isnumeric():
                     number_region = self.get_entire_number_region(grid=grid, row=row,cell=cell)
                     is_part = self.check_is_part(grid, number_region, row)
@@ -34,7 +32,6 @@ class EngineDecoder:
 
     def get_entire_number_region(self, grid: list[list[str]], cell: int, row: int) -> list[int]:
         right_bound = len(grid[0])
-        #Check x,y are correct way around here
         start = cell
         end = cell
         while start >= 0 and grid[row][start].isdigit():
@@ -62,9 +59,6 @@ class EngineDecoder:
                 "right_down": [x+1,y-1]
                 }
             for direction in eight_directions:
-                # print(grid[y][start:end])
-                # print(direction)
-                # print(grid[eight_directions[direction][0]][eight_directions[direction][1]])
                 x_new, y_new = eight_directions[direction][0], eight_directions[direction][1]
                 #Check not out of bounds
                 if x_new > 0 and x_new < right_bound and y_new > 0 and y_new < lower_bound:
