@@ -17,7 +17,7 @@ class CheckWinner:
             print(winning_numbers)
 
             if len(winning_numbers) > 0:
-                total += pow(2,len(winning_numbers)-1)
+                total += len(winning_numbers)
         return total
     def check_card(self, card: str) -> list[set]:
         winners, ours = self.parse_card(card)
