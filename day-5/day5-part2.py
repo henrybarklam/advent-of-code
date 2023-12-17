@@ -1,6 +1,8 @@
 text = open('seeds_map.txt','r')
 readLines = text.readlines()
 
+
+# Might be able to find ranges that can be searched through
 class SeedLocator:
 
     def find_nearest(self, full_list: list[str]) -> int:
