@@ -15,10 +15,6 @@ class EngineDecoder:
 
                     if is_part:
                         total_count+= numbers_to_add[0] * numbers_to_add[1]
-
-
-
-
         return total_count
 
     def to_grid(self, lines: list[str]) -> list[list[str]]:
